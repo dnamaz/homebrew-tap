@@ -6,28 +6,23 @@ class Noetic < Formula
 
   on_macos do
     url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-macos-arm64.tar.gz"
-    sha256 "e09995f981f3dfbb41b747eb7b49232f1fcaaaa74431cf34bd11b0b4b84a44d7"
+    sha256 "fd3555aa676c9ced93711e7402e244a2778de010db577891fc8d3536a283ae02"
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-linux-arm64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_ARM64_SHA256"
+      sha256 "3315e0d84ae34c222ce80f0fffb437a518e2fcb5b89ed860180c5f940dd9d9e9"
     else
       url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-linux-x86_64.tar.gz"
-      sha256 "PLACEHOLDER_LINUX_X86_64_SHA256"
+      sha256 "bacd9b80bea5653367088bfaf1264ff626663a286b85da2c6f7933a46d690ece"
     end
   end
 
   def install
-    # Single native binary (GraalVM native image)
     bin.install "noetic"
-
-    # Shell wrapper scripts for service management
     bin.install "noetic-start" if File.exist?("noetic-start")
     bin.install "noetic-stop"  if File.exist?("noetic-stop")
-
-    # MCP server launcher for IDE integration
     bin.install "mcp-server.sh" if File.exist?("mcp-server.sh")
   end
 
