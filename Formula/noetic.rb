@@ -1,21 +1,21 @@
 class Noetic < Formula
   desc "Web search, crawl, and knowledge cache for AI coding assistants"
   homepage "https://github.com/dnamaz/noetic"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-macos-arm64.tar.gz"
-    sha256 "fd3555aa676c9ced93711e7402e244a2778de010db577891fc8d3536a283ae02"
+    sha256 "8b4de22cc99e8f3f4c0612826cf8ae74b57761136935b93582cdfc3848bb6950"
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-linux-arm64.tar.gz"
-      sha256 "3315e0d84ae34c222ce80f0fffb437a518e2fcb5b89ed860180c5f940dd9d9e9"
+      sha256 "d4f160b44a83db5baebed5b8968019f342ababcf3ad6444ff329ca7d13d52cf5"
     else
       url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-linux-x86_64.tar.gz"
-      sha256 "bacd9b80bea5653367088bfaf1264ff626663a286b85da2c6f7933a46d690ece"
+      sha256 "e5977b5065747c40e2c64f9000b67a515db079395ed7d7876ff63d917c455613"
     end
   end
 
