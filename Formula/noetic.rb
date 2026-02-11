@@ -6,7 +6,7 @@ class Noetic < Formula
 
   on_macos do
     url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-macos-arm64.tar.gz"
-    sha256 "e9ba114191f477152391ab8ac8c3f9d23634432701bbd880a16e49977b87229a"
+    sha256 "a85e2a1db51ce577e316041d8bf15f91e8328a629ac744f5340ccc5c2df2555b"
   end
 
   on_linux do
@@ -26,9 +26,6 @@ class Noetic < Formula
     # Shell wrapper scripts for service management
     bin.install "noetic-start" if File.exist?("noetic-start")
     bin.install "noetic-stop"  if File.exist?("noetic-stop")
-
-    # MCP server launcher for IDE integration
-    bin.install "mcp-server.sh" if File.exist?("mcp-server.sh")
   end
 
   service do
