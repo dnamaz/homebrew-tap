@@ -1,12 +1,12 @@
 class Cleave < Formula
   desc "AI-powered GitHub PR analysis - split large PRs into reviewable groups"
   homepage "https://github.com/dnamaz/cleave"
-  version "1.0.31"
+  version "1.0.32"
   license "MIT"
 
   on_macos do
     url "https://github.com/dnamaz/cleave/releases/download/v#{version}/cleave-#{version}-macos-arm64.tar.gz"
-    sha256 "8746c33eefded445f6db7ccd91761ff4db98094665aa68c292140b4a0a1c5671"
+    sha256 "b519869017b271fdc87e252b751cecf8aa98716d8e8f3c1fcdfc0312e29756bc"
   end
 
   on_linux do
