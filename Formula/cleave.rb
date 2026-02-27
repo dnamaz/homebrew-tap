@@ -1,12 +1,12 @@
 class Cleave < Formula
   desc "AI-powered GitHub PR analysis - split large PRs into reviewable groups"
-  homepage "https://github.com/dnamaz/cleave-releases"
-  version "1.0.32"
+  homepage "https://github.com/dnamaz/cleave"
+  version "1.0.33"
   license "MIT"
 
   on_macos do
     url "https://github.com/dnamaz/cleave-releases/releases/download/v#{version}/cleave-#{version}-macos-arm64.tar.gz"
-    sha256 "b519869017b271fdc87e252b751cecf8aa98716d8e8f3c1fcdfc0312e29756bc"
+    sha256 "aaccb22059f2074e649b494ec70cab7cbdb89a8b2593a3efb4f5c1aa9fdf7562"
   end
 
   on_linux do
@@ -45,7 +45,7 @@ class Cleave < Formula
       First-time setup:
         cleave setup
 
-      You'll need your org's GitHub App credentials
+      You'll need your org's GitHub credentials
       (ask your team lead or check 1Password).
 
       Start the app:
