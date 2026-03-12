@@ -1,20 +1,20 @@
 class Cleave < Formula
   desc "AI-powered GitHub PR analysis - split large PRs into reviewable groups"
   homepage "https://github.com/dnamaz/cleave-releases"
-  version "1.0.33-3"
+  version "1.0.33-4"
   license "MIT"
 
   on_macos do
-    url "https://github.com/dnamaz/cleave-releases/releases/download/v1.0.33/cleave-1.0.33-3-macos-arm64.tar.gz"
-    sha256 "9e123a2a80cd409f09d83f34cde467aadc951876d2635bfbe584145ee194f0de"
+    url "https://github.com/dnamaz/cleave-releases/releases/download/v1.0.33/cleave-1.0.33-4-macos-arm64.tar.gz"
+    sha256 "ac8603c95cc9564ea583c470336b58fb2ff4e92860141886432ec561aad000a8"
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/dnamaz/cleave-releases/releases/download/v1.0.33/cleave-1.0.33-3-linux-arm64.tar.gz"
+      url "https://github.com/dnamaz/cleave-releases/releases/download/v1.0.33/cleave-1.0.33-4-linux-arm64.tar.gz"
       sha256 "PLACEHOLDER"
     else
-      url "https://github.com/dnamaz/cleave-releases/releases/download/v1.0.33/cleave-1.0.33-3-linux-x86_64.tar.gz"
+      url "https://github.com/dnamaz/cleave-releases/releases/download/v1.0.33/cleave-1.0.33-4-linux-x86_64.tar.gz"
       sha256 "PLACEHOLDER"
     end
   end
