@@ -1,43 +1,22 @@
 class Noetic < Formula
   desc "Web search, crawl, and knowledge cache for AI coding assistants"
   homepage "https://github.com/dnamaz/noetic"
-  version "0.2.1"
+  version "0.2.2"
   license "MIT"
 
   on_macos do
     url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-macos-arm64.tar.gz"
-    sha256 "bc8056ad6a2a6a2300bb49be2000dd0a32477503e5ddc4a377b1693c07527a06"
+    sha256 "fcf15b2f8494c864b6e3df58ce283f21f0f3bfedc265c0fb6486378dbadf7d9a"
   end
 
   on_linux do
-    if Hardware::CPU.arm?
-      url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-linux-arm64.tar.gz"
-      sha256 "9ac919dec7a20624bf2f56c45807430c63eaa54a7916109ec53517d9e3f86088"
-    else
-      url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-linux-x86_64.tar.gz"
-      sha256 "b323007566f55952ec80dd3adf92c5547de8cf4bfc4f91f64d00d3c1df944fec"
-    end
+    odie "Noetic v#{version} does not support Linux. Use v0.2.1 or earlier."
   end
 
   def install
     bin.install "noetic"
     bin.install "noetic-start" if File.exist?("noetic-start")
     bin.install "noetic-stop"  if File.exist?("noetic-stop")
-  end
-
-  service do
-    run [opt_bin/"noetic",
-         "--server.port=8090",
-         "--websearch.adapter.default-mode=rest"]
-    keep_alive true
-    log_path var/"log/noetic.log"
-    error_log_path var/"log/noetic.log"
-    working_dir var/"noetic"
-  end
-
-  def post_install
-    (var/"noetic").mkpath
-    (var/"log").mkpath
   end
 
   def caveats
@@ -56,8 +35,8 @@ class Noetic < Formula
         noetic install-skill --target=cursor
         noetic install-skill --list
 
-      Server logs:  #{var}/log/noetic.log
-      Model cache:  ~/.websearch/models/
+      Server logs: #{var}/log/noetic.log
+      Model cache: ~/.websearch/models/
       Vector cache: ~/.websearch/index/
     EOS
   end
