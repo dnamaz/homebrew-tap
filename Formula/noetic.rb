@@ -6,7 +6,7 @@ class Noetic < Formula
 
   on_macos do
     url "https://github.com/dnamaz/noetic/releases/download/v#{version}/noetic-#{version}-macos-arm64.tar.gz"
-    sha256 "fcf15b2f8494c864b6e3df58ce283f21f0f3bfedc265c0fb6486378dbadf7d9a"
+    sha256 "d885796553baeaaca689c35a4411ed08abac21e75b43544634890ad1ac8081a1"
   end
 
   on_linux do
